@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vokhmyanina_GUN40_FinalTask.CasinoGames
 {
-    public abstract class CasinoGameBase
+    public sealed class BlackJack : CasinoGameBase
     {
-        public abstract void PlayGame();
+        public override void PlayGame()
+        {
+            Console.WriteLine("Black Jack is on");
+        }
     }
 }
