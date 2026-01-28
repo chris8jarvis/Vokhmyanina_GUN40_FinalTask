@@ -11,8 +11,8 @@ namespace Vokhmyanina_GUN40_FinalTask.CasinoGames
     public sealed class DiceGame : CasinoGameBase
     {
         private List<DiceStruct> _diceList;
-        private readonly  int _diceCount;
-        private readonly  int _minValue;
+        private readonly int _diceCount;
+        private readonly int _minValue;
         private readonly int _maxValue;
 
         public DiceGame(int diceCount, int minValue, int maxValue) : base()

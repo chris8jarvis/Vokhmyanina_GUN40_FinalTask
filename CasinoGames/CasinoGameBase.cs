@@ -36,9 +36,9 @@ namespace Vokhmyanina_GUN40_FinalTask.CasinoGames
 
         protected virtual void GameResultsCheck() //вывод результатов игры в консоль
         {
-            OnWin += (sender, args) => Console.WriteLine($"Win! Game: {GetType().Name}");
-            OnLoose += (sender, args) => Console.WriteLine($"Loose! Game: {GetType().Name}");
-            OnDraw += (sender, args) => Console.WriteLine($"Draw! Game: {GetType().Name}");
+            OnWin += (sender, args) => Console.WriteLine($"Win!\nGame: {GetType().Name}");
+            OnLoose += (sender, args) => Console.WriteLine($"Loose!\nGame: {GetType().Name}");
+            OnDraw += (sender, args) => Console.WriteLine($"Draw!\nGame: {GetType().Name}");
         }
     }
 }
