@@ -19,21 +19,21 @@ namespace Vokhmyanina_GUN40_FinalTask.Launcher
 
         public void LaunchGame() //GameLoop
         {
-
             Console.WriteLine("Welcome to our casino.");
-            string playerName = GetPlayerName();
-            int bank = GetBankFromFile(playerName, _casino.FileManager);
 
-            _casino.CreatePlayer(playerName, bank);
-            _player = _casino.Player;
+            //создаем игрока
+            string playerName = GetPlayerName();
+            int bank = GetBankFromFile(playerName, _casino.FileManager); //загружаем банк из файла
+
+            _casino.CreatePlayer(playerName, bank); //создаем профиль игрока
+            _player = _casino.Player; 
             Console.WriteLine($"{_player.Name} your bank is {_player.Bank}");
 
-            //-== Add money
+            //-== пополнение банка
             int sum = GetSumForBankFromUser();
             _player.IncreaseBank(sum);
             Console.WriteLine($"Your current bank is {_player.Bank}");
-            //-==
-            
+
             //-== Choice of game (while)
             ChooseGame();
 
@@ -107,19 +107,19 @@ namespace Vokhmyanina_GUN40_FinalTask.Launcher
 
                 if (userChoice == "1")
                 {
-                    BlackJack blackJack = new BlackJack();
-                    blackJack.PlayGame();
+                    BlackJack blackJack = new BlackJack(); //создаем игру
+                    blackJack.PlayGame(); //запускаем игру
                     break;
                 }
                 else if (userChoice == "2")
                 {
-                    DiceGame diceGame = new DiceGame();
+                    DiceGame diceGame = new DiceGame(3, 1, 6);
                     diceGame.PlayGame();
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Wrong number");
+                    Console.WriteLine("Wrong choice. Try again.");
                 }
             }
 

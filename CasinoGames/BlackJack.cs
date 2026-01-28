@@ -12,5 +12,6 @@ namespace Vokhmyanina_GUN40_FinalTask.CasinoGames
         {
             Console.WriteLine("Black Jack is on");
         }
+        protected override void FactoryMethod() { }
     }
 }
