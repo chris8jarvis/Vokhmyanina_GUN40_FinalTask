@@ -1,10 +1,13 @@
-﻿namespace CasinoGame
+﻿using Vokhmyanina_GUN40_FinalTask.Launcher;
+
+namespace CasinoGame
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            new GameLaunch().StartGame();
+            // для видимости подключить namespace лаунчера
+            new LaunchCasino().LaunchGame();
         }
     }
     
