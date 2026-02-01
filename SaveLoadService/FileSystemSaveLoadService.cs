@@ -69,7 +69,6 @@ namespace Vokhmyanina_GUN40_FinalTask.SaveLoadService
                 Console.WriteLine($"Error while loading data {ex.Message}");
                 return string.Empty;
             }
-
         }
 
     }

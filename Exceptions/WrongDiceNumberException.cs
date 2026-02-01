@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace Vokhmyanina_GUN40_FinalTask.Exceptions
 {
-    public class WrongDiceNumberException : Exception //наследуетяс от стандартного класса exception
+    public class WrongDiceNumberException : Exception 
     {
-        public int InvalidNumber { get; } //три свойства InvalidNumber=введенное пользователем число
-        public int MinAllowed { get; } //минимально разрешенное число
-        public int MaxAllowed { get; } //максимально разрешенное число
+        public int InvalidNumber { get; }
+        public int MinAllowed { get; }
+        public int MaxAllowed { get; }
 
-        //конструктор
         public WrongDiceNumberException(int number, int minAllowed, int maxAllowed)
             : base($"Incorrect number: {number}. Acceptable range: [{minAllowed}, {maxAllowed}]")
         {
-            //свойства для хранения переданных в аргументах значений
             InvalidNumber = number;
             MinAllowed = minAllowed;
             MaxAllowed = maxAllowed;

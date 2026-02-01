@@ -15,9 +15,6 @@ namespace Vokhmyanina_GUN40_FinalTask.Profile
 
         public string Name { get; private set; }
 
-        // попробовать ограничение по макс добавить в сетер. и наверное в конструкторе и в Инкрисе невозможно будет
-        // ввести больше максимума
-        // так же, так как у нас есть IncreaseBank и DecreaseBank, кажется что сеттер не может быть публичным
         public int Bank => _bank;
 
         public PlayerProfile(string name, int bank)
@@ -39,9 +36,5 @@ namespace Vokhmyanina_GUN40_FinalTask.Profile
         {
             _bank -= amount;
         }
-
-        // 1. Формат именования констант
-        // 2. Проверка на максимальный банк
-        // 3. Добавить процедуру для kick out (но не обязательно сейчас, возможно когда само казино и необходимость появится)
     }
 }

@@ -8,37 +8,17 @@ namespace Vokhmyanina_GUN40_FinalTask.CasinoGames
 {
     public abstract class CasinoGameBase
     {
-        public event EventHandler? OnWin; //три события
-        public event EventHandler? OnLoose; //EventHandler-стандартный делегат в C# принимающий два параметра
-        public event EventHandler? OnDraw;
+        public abstract event Action OnWin;
+        public abstract event Action OnLoose;
+        public abstract event Action OnDraw;
 
         protected CasinoGameBase()
         { 
-            GameResultsCheck();
+            // GameResultsCheck();
         }
-        public abstract void PlayGame(); //публичиный абстрактный метод
+        public abstract void PlayGame();
 
-        protected virtual void OnWinInvoke() //защищенный метод, вызывающий соответствующее событие
-        {
-            OnWin?.Invoke(this, EventArgs.Empty);
-        }
+        protected abstract void FactoryMethod();
 
-        protected virtual void OnLooseInvoke()
-        {
-            OnLoose?.Invoke(this, EventArgs.Empty);
-        }
-
-        protected virtual void OnDrawInvoke()
-        {
-            OnDraw?.Invoke(this, EventArgs.Empty);
-        }
-        protected abstract void FactoryMethod(); //защищенный метод, вызывающийся в конструкторе
-
-        protected virtual void GameResultsCheck() //вывод результатов игры в консоль
-        {
-            OnWin += (sender, args) => Console.WriteLine($"Win!\nGame: {GetType().Name}");
-            OnLoose += (sender, args) => Console.WriteLine($"Loose!\nGame: {GetType().Name}");
-            OnDraw += (sender, args) => Console.WriteLine($"Draw!\nGame: {GetType().Name}");
-        }
     }
 }
